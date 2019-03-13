@@ -1,5 +1,5 @@
 
-.button {
+.buttonBlue {
   border: solid 2px blue;
   border-radius: 8px !important;
   margin: 1em;
@@ -7,4 +7,9 @@
   width: 200px;
   background-color: white;
   cursor: pointer;
+  
+} 
+
+.buttonRed {
+  border-color: red;
 } 

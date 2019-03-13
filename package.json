@@ -9,6 +9,7 @@
     "@types/react-dom": "16.8.2",
     "@types/react-router-dom": "^4.3.1",
     "concurrently": "^4.1.0",
+    "midboss": "^0.10.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -19,7 +20,7 @@
     "typescript": "3.3.3333"
   },
   "scripts": {
-    "ts:css": "tcm -s -c -p src/**/*.module.scss",
+    "ts:css": "tcm -w -c -p src/components/**/*.module.scss",
     "_start": "PORT=4000 npx concurrently \"npm:ts:css -- -w\" \"react-scripts start\"",
     "start": "PORT=4000 react-scripts start",
     "build": "npm run ts:css && react-scripts build",
@@ -36,5 +37,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "ts-node": "^8.0.3",
+    "ts-node-dev": "^1.0.0-pre.32"
+  }
 }

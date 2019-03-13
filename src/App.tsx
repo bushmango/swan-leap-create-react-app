@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 
 import {Button} from './components/Button'
-import {Button2} from './components/Button2'
+import {ButtonAlt} from './components/ButtonAlt'
 
 import { BrowserRouter as Router, Route, Link, Switch as RouteSwitch, BrowserRouter } from "react-router-dom";
 
@@ -26,6 +26,7 @@ const App = (props: {}) => {
       <BrowserRouter>
         <RouteSwitch>
           <Route exact path="/welcome_screen" component={Welcome} />
+          <Route exact path="/quick_rates" component={Welcome} />
           <Route component={NotWelcome} />
         </RouteSwitch>
       </BrowserRouter>
@@ -38,7 +39,8 @@ const App = (props: {}) => {
     
       <Button title='button 1' />
       <Button title='another button' />
-      <Button2 title='differently styled button' />
+      <ButtonAlt title='differently styled button' isRed={false} /> 
+      <ButtonAlt title='differently styled button' isRed={true} />
     </div>
   )
 
