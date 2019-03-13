@@ -7,6 +7,7 @@
     "@types/node": "11.11.3",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
+    "@types/react-router-dom": "^4.3.1",
     "concurrently": "^4.1.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
@@ -19,8 +20,8 @@
   },
   "scripts": {
     "ts:css": "tcm -s -c -p src/**/*.module.scss",
-    "start": "PORT=4000 concurrently \"npm:ts:css -- -w\" \"react-scripts start\"",
-    "_start": "react-scripts start",
+    "_start": "PORT=4000 npx concurrently \"npm:ts:css -- -w\" \"react-scripts start\"",
+    "start": "PORT=4000 react-scripts start",
     "build": "npm run ts:css && react-scripts build",
     "test": "concurrently \"npm:ts:css -- -w\" \"react-scripts test\"",
     "_test": "react-scripts test",
