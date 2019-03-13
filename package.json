@@ -1,0 +1,39 @@
+{
+  "name": "swan-leap-create-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.11",
+    "@types/node": "11.11.3",
+    "@types/react": "16.8.8",
+    "@types/react-dom": "16.8.2",
+    "concurrently": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.8",
+    "serve": "^10.1.2",
+    "typed-css-modules": "^0.4.2",
+    "typescript": "3.3.3333"
+  },
+  "scripts": {
+    "ts:css": "tcm -s -c -p src/**/*.module.scss",
+    "start": "PORT=4000 concurrently \"npm:ts:css -- -w\" \"react-scripts start\"",
+    "_start": "react-scripts start",
+    "build": "npm run ts:css && react-scripts build",
+    "test": "concurrently \"npm:ts:css -- -w\" \"react-scripts test\"",
+    "_test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "license": "UNLICENSED",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
