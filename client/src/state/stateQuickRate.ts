@@ -6,11 +6,14 @@ import minimongo from 'minimongo'
 import * as _ from 'lodash'
 import fetch from 'isomorphic-unfetch'
 
+import { tms2 } from './tms2'
+
 const host = process.env.host
 
 interface IStateQuickRate {
   isLoading: boolean
   fetchedShipment: any
+  tms2User: any
   // fetchedShipment: {
   //   error?: string
   //   data?: any
@@ -20,6 +23,7 @@ interface IStateQuickRate {
 let initialState: IStateQuickRate = {
   isLoading: false,
   fetchedShipment: null,
+  tms2User: null,
 }
 
 const stateManager = midboss.createMidboss(midbossKey, '1.0.0', initialState, {
@@ -28,6 +32,13 @@ const stateManager = midboss.createMidboss(midbossKey, '1.0.0', initialState, {
 export { stateManager }
 
 let minimongoUrl = 'http://localhost:3008/minimongo-api/v1/'
+
+export async function fetchCurrentUser() {
+  let result = await tms2.getMeteorUser()
+  stateManager.produce(ds => {
+    ds.tms2User = result
+  })
+}
 
 export async function fetchShipment() {
   const _id = '224f6aTAEFpzGGNzf'

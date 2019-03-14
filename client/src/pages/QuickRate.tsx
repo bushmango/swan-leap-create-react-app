@@ -10,16 +10,25 @@ const QuickRate = (props: {}) => {
     if (!state.fetchedShipment) {
       stateQuickRate.fetchShipment()
     }
+    if (!state.tms2User) {
+      stateQuickRate.fetchCurrentUser()
+    }
   })
 
   return (
     <div>
-      Quick rate demo
-      <div>isloading? {'' + state.isLoading}</div>
-      <pre>{JSON.stringify(state.fetchedShipment, null, 2)}</pre>
+      Quick rate react edition
+      {/* <div>isloading? {'' + state.isLoading}</div> */}
+      {/* <pre>{JSON.stringify(state.fetchedShipment, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(state.tms2User, null, 2)}</pre> */}
+      {state.tms2User && (
+        <div>
+          Logged in user: <strong>{state.tms2User.username}</strong>
+        </div>
+      )}
       <button
         onClick={() => {
-          stateQuickRate.fetchShipment()
+          stateQuickRate.fetchCurrentUser()
         }}
       >
         Refresh
