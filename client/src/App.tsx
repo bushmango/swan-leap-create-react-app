@@ -9,8 +9,9 @@ import {
   Switch as RouteSwitch,
 } from 'react-router-dom'
 
-import { QuickRate } from './QuickRate'
-import { CssTests } from './CssTests'
+import { QuickRate } from './pages/QuickRate'
+import { CssTests } from './pages/CssTests'
+import { IFrameTest } from './pages/IFrameTest'
 
 const Welcome = () => {
   return <h2>Welcome from React!</h2>
@@ -22,14 +23,26 @@ const NotWelcome = () => {
 const App = (props: {}) => {
   return (
     <div className="App">
-      <h2>This is a test of React with Typescript / CSS Modules / SASS</h2>
-      Ok hot reloading is working
       <RouteSwitch>
         <Route exact path="/welcome_screen" component={Welcome} />
         <Route exact path="/quick_rates" component={QuickRate} />
+        <Route exact path="/iframe-test" component={IFrameTest} />
         <Route exact path="/css" component={CssTests} />
         <Route component={NotWelcome} />
       </RouteSwitch>
+
+      <div
+        style={{
+          color: '#ccc',
+          fontSize: '14px',
+          margin: '1em',
+          padding: '1em',
+          border: 'solid 1px #ccc',
+          borderRadius: '8px',
+        }}
+      >
+        This is a test of React with Typescript / CSS Modules / SASS
+      </div>
     </div>
   )
 }

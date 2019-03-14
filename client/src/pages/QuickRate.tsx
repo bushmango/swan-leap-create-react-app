@@ -1,7 +1,7 @@
 import React from 'react'
 
 import * as midboss from 'midboss'
-import * as stateQuickRate from './state/stateQuickRate'
+import * as stateQuickRate from '../state/stateQuickRate'
 
 const QuickRate = (props: {}) => {
   const state = midboss.useSubscription(stateQuickRate.stateManager)

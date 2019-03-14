@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.11",
+    "@types/lodash": "^4.14.123",
     "@types/node": "11.11.3",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
@@ -22,8 +23,8 @@
   },
   "scripts": {
     "ts:css": "tcm -w -c -p src/components/**/*.module.scss",
-    "_start": "PORT=4000 npx concurrently \"npm:ts:css -- -w\" \"react-scripts start\"",
-    "start": "PORT=4000 react-scripts start",
+    "_start": "PORT=4101 npx concurrently \"npm:ts:css -- -w\" \"react-scripts start\"",
+    "start": "PORT=4101 react-scripts start",
     "build": "npm run ts:css && react-scripts build",
     "test": "concurrently \"npm:ts:css -- -w\" \"react-scripts test\"",
     "_test": "react-scripts test",

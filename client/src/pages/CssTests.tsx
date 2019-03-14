@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Button } from './components/Button'
-import { ButtonAlt } from './components/ButtonAlt'
+import { Button } from '../components/Button'
+import { ButtonAlt } from '../components/ButtonAlt'
 
 const CssTests = (props: {}) => {
   return (
