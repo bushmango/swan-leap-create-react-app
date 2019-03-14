@@ -3,10 +3,14 @@ if (typeof window.global === 'undefined') {
 }
 
 function log (...args) {
-  console.log('parent<<', ...args)
+  if (window.console) {
+    window.console.log('parent<<', ...args)
+  }
 }
 function logError (...args) {
-  console.error('parent<<', 'ERROR', ...args)
+  if (window.console && window.console.error) {
+    window.console.error('parent<<', 'ERROR', ...args)
+  }
 }
 
 global.getXkcdRandomNumber = (numberToAdd) => {
