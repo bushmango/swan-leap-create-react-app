@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { callGlobal } from './IframeRpc'
+import { callGlobal } from '../util/IframeRpc'
 
 const tms2 = {
   getXkcdRandomNumber: async (numberToAdd: number) => {

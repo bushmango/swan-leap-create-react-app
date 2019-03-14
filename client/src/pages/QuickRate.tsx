@@ -14,7 +14,7 @@ const QuickRate = (props: {}) => {
 
   return (
     <div>
-      Quick rate demo goes here
+      Quick rate demo
       <div>isloading? {'' + state.isLoading}</div>
       <pre>{JSON.stringify(state.fetchedShipment, null, 2)}</pre>
       <button

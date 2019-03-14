@@ -8581,6 +8581,11 @@ psl@^1.1.24, psl@^1.1.28:
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.1.31.tgz#e9aa86d0101b5b105cbe93ac6b784cd547276184"
   integrity sha512-/6pt4+C+T+wZUieKR620OpzN/LlnNKuWjy1iFLQ/UG35JqHlR/89MP1d96dUfkf6Dne3TuLQzOYEYshJ+Hx8mw==
 
+pub-sub-js@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pub-sub-js/-/pub-sub-js-1.1.0.tgz#a82173c7f5b2c943b7fcd294e8f1aa48aefdce0f"
+  integrity sha1-qCFzx/WyyUO3/NKU6PGqSK79zg8=
+
 public-encrypt@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/public-encrypt/-/public-encrypt-4.0.3.tgz#4fcc9d77a07e48ba7527e7cbe0de33d0701331e0"

@@ -13,6 +13,7 @@
     "midboss": "^0.10.0",
     "minimongo": "^5.1.2",
     "node-sass": "^4.11.0",
+    "pub-sub-js": "^1.1.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1",
