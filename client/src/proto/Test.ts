@@ -1,37 +1,65 @@
 import _ from 'lodash'
-import { Meta, testDecorator } from './metadataHelpers'
+import { Meta, Metadata, SuperMetadata, testDecorator } from './metadataHelpers'
 import { Subtest, SubtestMetadata } from './Subtest'
+import { string } from 'prop-types'
 
-let TestMetadata: { [key in keyof Test]: Meta<Test> } = {
-  a: {
-    required: true,
-    mongoRename: 'mongoA',
-  },
-  b: {
-    dynamoRename: 'dynamoB',
-  },
-  c: {
-    required: true,
-    mongoRename: 'mongoC',
-    dynamoRename: 'dynamoC',
-  },
-  d: {
-    required: true,
-    meta: SubtestMetadata,
-  },
-  e: {
-    required: true,
-    meta: {
-      something: {
-        required: true,
-      },
-      else: {
-        mongoRename: 'blob',
+let TestMetadata: SuperMetadata<Test> = {
+  name: 'Test',
+  metadata: {
+    a: {
+      required: true,
+      mongoRename: 'mongoA',
+    },
+    b: {
+      dynamoRename: 'dynamoB',
+    },
+    c: {
+      required: true,
+      mongoRename: 'mongoC',
+      dynamoRename: 'dynamoC',
+    },
+    d: {
+      required: true,
+      metadata: SubtestMetadata,
+    },
+    e: {
+      required: true,
+      metadata: <Metadata<Test['e']>>{
+        something2: {
+          required: true,
+        },
+        else2: {
+          required: true,
+        },
+        // else3: {}
       },
     },
   },
 }
 export { TestMetadata }
+
+let TestMetadata2: SuperMetadata<Test> = {
+  name: 'Test',
+  metadata: {
+    a: {
+      type: 'string',
+      required: true,
+      mongoRename: 'mongoA',
+    },
+    e: {
+      metadata: {
+        something2: {
+          type: 'string',
+          required: true,
+        },
+        else2: {
+          type: 'number',
+        },
+      },
+    },
+  },
+}
+export { TestMetadata2 }
 
 export interface Test {
   a?: string
@@ -39,12 +67,17 @@ export interface Test {
   c?: string
   d?: Subtest
   e?: {
-    someting: string
-    else: number
+    something2: string
+    else2: number
+    else3: string
   }
+  f?: number
 }
 
-// export class TestDecorators implements Test {
-//   @testDecorator
-//   a: string
+// export interface E {
+//   something2: string
+//   else2: number
 // }
+
+// Idea : create a very simple tool to dynamically create Interfaces from this
+// Advantage : can write validators on objects coming from json, etc.
