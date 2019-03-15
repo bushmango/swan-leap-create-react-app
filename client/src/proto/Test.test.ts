@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import * as meta from './metadataHelpers'
-import { Test, TestMetadata } from './testType'
+import { Test, TestMetadata } from './Test'
 
 it('validates', () => {
   let test: Test = {
